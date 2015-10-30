@@ -1,0 +1,24 @@
+<div class="overlay" ng-controller="addCustomerCtrl">
+    <a class="close" ng-click="closePopUp()">×</a>
+    <div>
+        <input id="name" placeholder="Client Name:" ng-model="newCustomer.name"/>
+    </div>
+    <div>
+        <input id="tel" placeholder="Telephone:"  ng-model="newCustomer.tel"/>
+    </div>
+    <div>
+        <input id="email" placeholder="Email Address:" ng-model="newCustomer.email"/>
+    </div>
+    <div>
+        <input id="accountID" placeholder="Account ID:" ng-model="newCustomer.accountID"/>
+    </div>
+    <div>
+        <input id="accountName" placeholder="Account Name:" ng-model="newCustomer.accounts"/>
+    </div>
+    <div>
+        <input id="note" placeholder="Notes:" ng-model="newCustomer.notes"/>
+    </div>
+    <div class="add-done">
+        <button type="button" class="btn btn-success" ng-click="addCustomer()">Done</button>
+    </div>
+</div>

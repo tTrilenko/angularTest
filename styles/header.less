@@ -1,0 +1,85 @@
+.header {
+  height: 70px;
+
+  .title {
+    font-size: 22px;
+    margin-top: 25px;
+    color: #205277;
+  }
+
+  li {
+    cursor: pointer;
+    height: 100%;
+    font-size: 18px;
+    text-align: center;
+    padding-top: 30px;
+  }
+
+  .top-nav-menu {
+    padding: 0;
+    height: 100%;
+
+    .active::before {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      left: 0;
+      top: 0;
+      border-top: 25px solid #F4F8F9;
+      border-right: 68px solid transparent;
+    }
+
+    .active::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      right: 0;
+      bottom: 0;
+      border-bottom: 25px solid #F4F8F9;
+      border-left: 68px solid transparent;
+    }
+
+    .active {
+      color: white;
+      background: -webkit-linear-gradient(55deg, #194564 0%, #3371a6 100%);
+      background: -moz-linear-gradient(55deg, #194564 0%, #3371a6 100%);
+      background: -o-linear-gradient(55deg, #194564 0%, #3371a6 100%);
+      background: -ms-linear-gradient(55deg, #194564 0%, #3371a6 100%);
+      background: linear-gradient(35deg, #194564 0%, #3371a6 100%);
+    }
+  }
+
+  .right-side-additional {
+    width: calc(~'25% + 40px');;
+    padding-right: 0;
+    color: #3371A6;
+
+    li {
+      padding-right: 0;
+      text-align: right;
+      font-size: 16px;
+    }
+
+    .add-contacts::before,
+    .download::before {
+      position: absolute;
+      left: 10%;
+      top: 55%;
+      content: "";
+    }
+
+    .add-contacts::before {
+      width: 28px;
+      height: 28px;
+      background-image: url("../imgs/add_user-75.png");
+    }
+
+    .download::before {
+      width: 22px;
+      height: 22px;
+      background-image: url("../imgs/excel-32.png");
+    }
+  }
+}

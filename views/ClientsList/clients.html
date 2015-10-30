@@ -1,0 +1,130 @@
+<div ng-class="clientsListWrapClass" class="clients-main-inf-wrap">
+    <div ng-if="isInfoHidden" class="show-info" ng-click="hideInfo()"></div>
+    <div class="top-search">
+        <input placeholder=" Name, SSN or TIN, Rep Code, Office, Street, City, State, Phone" ng-model="clientSearch"/>
+        <span></span>
+    </div>
+    <div class="row title">
+        <div class="col-sm-5 table-sort" ng-click="reverseTable()">
+            Client
+            <span ng-class="arrowClass"></span>
+        </div>
+        <div class="col-sm-4">Accounts</div>
+        <div class="col-sm-3 notes-title">Notes</div>
+    </div>
+    <ul class="customers-all">
+        <li class="row" ng-repeat="client in clientsList.data |filter:clientSearch | orderBy: 'name': reverse" ng-click="editClient(client)">
+            <div class="col-sm-3 icon-mini">
+                <img ng-src="imgs/{{client.smallImgSrc}}.png"/>
+            </div>
+            <div class="col-sm-2 name">
+                {{client.name}}
+            </div>
+            <div class="col-sm-3 mail-tel">
+                <div class="tel">
+                    {{client.tel}}
+                </div>
+                <div class="email">
+                    {{client.email}}
+                </div>
+            </div>
+            <div class="col-sm-3 accounts">
+                <span class="account-id">{{client.accountID}}</span>
+                {{client.accounts}}
+            </div>
+            <div class="col-sm-3 notes">
+                <div>
+                    {{client.notes[0].content}}
+                </div>
+                <div>
+                    {{client.notes[0].date}}
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+<div class="col-sm-4 client-info-side-bar" ng-if="selectedClient">
+    <div class="row main-info info">
+        <div class="col-sm-9">
+            <span class="name">{{selectedClient.name}}</span>
+            <span class="short-name-label">Short Name</span>
+            <span class="short-name">{{selectedClient.shortName}}</span>
+        </div>
+        <div class="col-sm-1 icon-mini">
+            <img ng-src ="imgs/{{selectedClient.smallImgSrc}}.png" />
+        </div>
+    </div>
+    <div class="contact-info">
+        <div class="row info">
+            <span class="col-sm-1 vertical-line"></span>
+            <span class="col-sm-5 title">Contact information</span>
+            <span class="col-sm-4 line"></span>
+            <span class="col-sm-2 edit">Edit</span>
+        </div>
+        <div class="row">
+            <div class="content col-sm-6">
+                <div class="category-title">Email</div>
+                <div class="category-desc">{{selectedClient.email}}</div>
+                <div class="category-title">Home phone</div>
+                <div class="category-desc">{{selectedClient.tel}}</div>
+                <div class="category-title">Business phone</div>
+                <div class="category-desc">{{selectedClient.tel}}</div>
+                <div class="category-title">Legal Address</div>
+                <div class="category-desc">{{selectedClient.address}}</div>
+            </div>
+        </div>
+    </div>
+    <div class="notes">
+        <div class="row info">
+            <span class="col-sm-1 vertical-line"></span>
+            <span class="col-sm-2 title">Notes</span>
+            <span class="col-sm-6 line"></span>
+            <span class="col-sm-3 add">Add note</span>
+        </div>
+        <div class="row">
+            <ul class="content col-sm-6">
+                <li class="row" ng-repeat="note in selectedClient.notes">
+                    <div class="col-sm-1 icon-doc"></div>
+                    <div class="col-sm-8">
+                        <div>{{note.content}}</div>
+                        <div>{{note.date}}</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="financial">
+        <div class="row info">
+            <span class="col-sm-1 vertical-line"></span>
+            <span class="col-sm-3 title">Financial</span>
+            <span class="col-sm-5 line"></span>
+            <span class="col-sm-3 edit">Edit</span>
+        </div>
+        <div class="row ">
+            <div class="content col-sm-6">
+                <div class="category-title">Annual Income</div>
+                <div class="category-desc">{{selectedClient.annualIncome}}</div>
+                <div class="category-title">Liquid Assets</div>
+                <div class="category-desc">{{selectedClient.liquidAssets}}</div>
+                <div class="category-title">Net worth</div>
+                <div class="category-desc">{{selectedClient.netWorth}}</div>
+                <div class="category-title">Tax Bracket</div>
+                <div class="category-desc">{{selectedClient.taxBr}}</div>
+            </div>
+        </div>
+    </div>
+    <div class="accounts">
+        <div class="row info">
+            <span class="col-sm-1 vertical-line"></span>
+            <span class="col-sm-2 title">Accounts</span>
+            <span class="col-sm-1 line"></span>
+            <span class="col-sm-4 add">New order</span>
+            <span class="col-sm-4 add">Add account</span>
+        </div>
+        <div class="row accounts-content">
+            <span class="ira-id">{{selectedClient.accountID}}</span>
+            <span class>{{selectedClient.accounts}}</span>
+        </div>
+    </div>
+</div>
+

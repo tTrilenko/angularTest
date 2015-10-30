@@ -1,0 +1,324 @@
+.IconMini (@src) {
+  z-index: 1000;
+  right: -20px;
+  top: 25px;
+  content: "";
+  position: absolute;
+  width: 19px;
+  height: 19px;
+  background-image: url(@src);
+}
+
+@media (max-width: 1024px) {
+  .notes-title {
+    display: none;
+  }
+
+  .customers-all .notes {
+    display: none;
+  }
+}
+
+.clients-main-inf-wrap {
+  position: relative;
+  padding: 0;
+
+  .show-info {
+    z-index: 1000;
+    position: absolute;
+    right: -16px;
+    height: 24px;
+    width: 16px;
+    display: inline-block;
+    background: url('../imgs/icon-show-info.png') no-repeat;
+    cursor: pointer;
+  }
+}
+
+.main-content {
+  position: relative;
+  height: 100vh;
+  background: linear-gradient(27deg, #f0f3f4 2%, #ffffff 98%);
+  margin-left: -5px;
+
+  .top-search {
+    margin: 18px 27px 18px 36px;
+    color: #c0c1c1;
+
+    input {
+      opacity: 0.3;
+      color: black;
+      width: 100%;
+      border: none;
+      border-bottom: 1px solid #c0c1c1;
+    }
+
+    input:focus {
+      outline: 0;
+    }
+
+    span {
+      position: absolute;
+      top: 10px;
+      right: 27px;
+      width: 22px;
+      height: 23px;
+      background-image: url("../imgs/search-25.png");
+    }
+  }
+
+  .title {
+    margin-left: 22px;
+    padding-bottom: 25px;
+    font-size: 12px;
+    color: #5e5e5e;
+    font-weight: 600;
+
+    .table-sort {
+      cursor: pointer;
+    }
+
+    .table-sort span {
+      display: inline-block;
+      width: 9px;
+      height: 4px;
+      margin-left: 5px;
+      background-image: url("../imgs/arrow-down.png");
+    }
+
+    .arrow-up {
+      transform: rotate(180deg);
+    }
+  }
+
+  .customers-all {
+    min-width: 700px;
+
+
+    li {
+      padding: 20px 0 22px 38px;
+      margin: 0;
+      cursor: pointer;
+    }
+
+    li:hover {
+      background-color: #edf9fd;
+
+      .icon-mini:after {
+        background-image: url("../imgs/icon-edit-pen.png");
+      }
+    }
+
+    .icon-mini {
+      position: relative;
+      width: 39px;
+      height: 40px;
+    }
+
+    .icon-mini:after {
+      .IconMini("../imgs/icon-phone.png");
+    }
+
+    .name {
+      margin-left: 20px;
+      color: #4e4e4e;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .email,
+    .account-id {
+      font-size: 14px;
+      color: #3270a5;
+      text-decoration: underline;
+    }
+
+    .tel {
+      color: #4e4e4e;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .accounts {
+      font-size: 12px;
+      line-height: 160%;
+    }
+
+    .notes {
+      :first-child {
+        margin-bottom: 10px;
+        font-size: 14px;
+        color: #4e4e4e;
+      }
+
+      :last-child {
+        font-size: 12px;
+        color: #9b9a9a;
+      }
+    }
+  }
+
+  .client-info-side-bar {
+    height: 100%;
+    min-width: 370px;
+    background-color: #EFF6F8;
+    overflow-y: auto;
+
+    .info {
+      position: relative;
+      margin-bottom: 25px;
+    }
+
+    .main-info {
+      margin-top: 35px;
+      line-height: 140%;
+
+      span {
+        display: block;
+      }
+
+      .name {
+        color: #2e6999;
+        font-size: 20px;
+        font-weight: 400;
+      }
+
+      .short-name-label {
+        color: #5e5e5e;
+        font-size: 13px;
+        margin-left: 3px;
+      }
+
+      .short-name {
+        font-size: 14px;
+        color: #4e4e4e;
+        margin-left: 3px;
+      }
+
+      .icon-mini:after {
+        .IconMini("../imgs/icon-edit-pen.png");
+      }
+    }
+
+    .vertical-line {
+      position: absolute;
+      left: 0;
+      top: 5px;
+      height: 5px;
+      width: 26px;
+      background-color: #215278;
+      -webkit-transform: rotateX(180deg) rotateZ(90deg) skewX(-20deg);
+      transform: rotateX(180deg) rotateZ(90deg) skewX(-20deg);
+      -webkit-transform-origin: 50% 50% 0;
+      transform-origin: 50% 50% 0;
+    }
+
+    span {
+      padding: 0;
+    }
+
+    .title {
+      color: #2e6999;
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+    .line {
+      margin: 8px 8px 0 0;
+      border-top: 1px solid #caecf7;
+    }
+
+    .edit:before,
+    .add:before {
+      content: '';
+      position: relative;
+      top: 5px;
+      margin-right: 5px;
+      height: 20px;
+      width: 20px;
+      display: inline-block;
+    }
+
+    .edit:before {
+      background-image: url('../imgs/icon-edit-blue.png');
+    }
+
+    .edit,
+    .add {
+      margin-top: -8px;
+      color: #3371a6;
+      font-size: 14px;
+    }
+
+    .add {
+      background: url('../imgs/icon-plus.png') no-repeat;
+    }
+
+    .content {
+      margin-left: 10px;
+
+      .category-title {
+        color: #5e5e5e;
+        font-size: 13px;
+        font-weight: 600;
+        line-height: 160%;
+      }
+
+      .category-desc {
+        margin-bottom: 10px;
+        line-height: 125%;
+        font-size: 14px;
+      }
+    }
+
+    .notes {
+      .content {
+        padding: 0;
+        margin-bottom: 20px;
+        margin-left: 30px;
+      }
+
+      li {
+        font-size: 13px;
+        margin-bottom: 10px;
+
+        div {
+          padding: 0;
+        }
+      }
+
+      .icon-doc {
+        height: 25px;
+        width: 19px;
+        margin: 0 10px;
+        background: url('../imgs/icon-document.png') no-repeat;
+      }
+    }
+
+    .financial {
+      .edit {
+        padding-left: 30px;
+      }
+    }
+
+    .accounts {
+      font-size: 14px;
+
+      .accounts-content {
+        margin-left: 10px;
+      }
+
+      .slide-right {
+        height: 25px;
+        width: 19px;
+        background: url('../imgs/icon-document.png') no-repeat;
+      }
+
+      .ira-id {
+        color: #3270a5;
+        font-weight: bold;
+        text-decoration: underline;
+      }
+    }
+  }
+}

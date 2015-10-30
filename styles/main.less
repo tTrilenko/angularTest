@@ -1,0 +1,38 @@
+@import "clients-list.less";
+@import "left-nav-menu.less";
+@import "header.less";
+@import "add-new-client.less";
+
+body {
+  position: relative;
+  overflow: hidden;
+  min-width: 1200px;
+  color: #A4A5A5;
+  font-family:  Geneva, Arial, Helvetica, sans-serif;
+  background-color: #F4F8F9;
+}
+
+.main-content-wrapper {
+    position: relative;
+    margin-left: 40px;
+
+
+    .shadow-left:before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        top: 0;
+        border-bottom: 10px solid transparent;
+        border-right: 10px solid #F4F8F9;
+    }
+
+    .shadow-left {
+        top: 60px;
+        left: 0;
+        height: 100vh;
+        position: absolute;
+        width: 10px;
+        background: linear-gradient(to left, #DDDFE0, #F1F5F6);
+    }
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet/less" type="text/css" href="styles/main.less">
+    <script src="libs/less.min.js"></script>
+    <script src="libs/angular.min.js"></script>
+    <script src="libs/angular-route.js"></script>
+    <script src="main.js"></script>
+    <script src="services/customerInfo.js"></script>
+    <script src="views/ClientsList/navCtrl.js"></script>
+    <script src="views/ClientsList/addCustomerCtrl.js"></script>
+    <script src="views/ClientsList/clientsListController.js"></script>
+</head>
+    <body ng-app="appMain">
+        <div class="container-fluid row">
+            <div class="left-nav-menu col-sm-1">
+                <ul class>
+                    <li class="logo"></li>
+                    <li class="left-nav-menu-item dashboard">
+                        <div>Dashboard</div>
+                        <div class="menu-hovered"></div>
+                    </li>
+                    <li class="left-nav-menu-item datamart">
+                        <div>My DataMart</div>
+                        <div class="menu-hovered"></div>
+                    </li>
+                    <li class="left-nav-menu-item reports">
+                        <div>Reports</div>
+                        <div class="menu-hovered"></div>
+                    </li>
+                    <li class="left-nav-menu-item training">
+                        <div>Training</div>
+                        <div class="menu-hovered"></div>
+                    </li>
+                    <li class="left-nav-menu-item my-reps">
+                        <div>My Reps</div>
+                        <div class="menu-hovered"></div>
+                    </li>
+                    <li class="left-nav-menu-item sales">
+                        <div>Sales</div>
+                        <div class="menu-hovered"></div>
+                    </li>
+                    <li class="left-nav-menu-item clients">
+                        <div>Clients</div>
+                        <div class="menu-hovered"></div>
+                    </li>
+                    <li class="left-nav-menu-item my-crm active">
+                        <div>My CRM</div>
+                        <div class="menu-hovered">
+                            <span></span>
+                        </div>
+                    </li>
+                </ul>
+                <div class="bottom-section">
+                    <div class="search">
+                        <span>
+                            <input placeholder="Search"/>
+                        </span>
+                    </div>
+                    <div class="rights">
+                        Powered by MyView, M&O Systems Inc
+                    </div>
+                    <div class="logout">Log out</div>
+                </div>
+            </div>
+            <div class="main-content-wrapper col-sm-offset-1 col-sm-10" ng-controller="navCtrl">
+                <div class="header row">
+                    <div class="title col-sm-2">My CRM</div>
+                    <ul class="row top-nav-menu col-sm-7">
+                        <li class="col-sm-2 top-nav-menu-item active">Contacts</li>
+                        <li class="col-sm-2 top-nav-menu-item">Households</li>
+                        <li class="col-sm-2 top-nav-menu-item">Notes</li>
+                        <li class="col-sm-2 top-nav-menu-item">Reminders</li>
+                    </ul>
+                    <ul class="row right-side-additional col-sm-3">
+                        <li class="col-sm-6 add-contacts" ng-click="addContacts()">
+                            Add contacts
+                        </li>
+                        <li class="col-sm-6 download">
+                            Download.xls
+                        </li>
+                    </ul>
+                    <div class="add-new-client" ng-include="'templates/add-new-client.html'" ng-show="popUpVisible"></div>
+                </div>
+                <div class="shadow-left"></div>
+                <div class="main-content row" ng-view></div>
+            </div>
+        </div>
+    </body>
+</html>
